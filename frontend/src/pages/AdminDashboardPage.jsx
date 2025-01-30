@@ -11,10 +11,10 @@ const AdminDashboardPage = () => {
       formData.append("file", files[0]);
 
       try {
-        const response = await fetch("http://localhost:5000/upload", {
-          method: "POST",
-          body: formData,
-        });
+        const response = await fetch(`${API_BASE_URL}/upload`, {
+  method: "POST",
+  body: formData,
+});
 
         if (response.ok) {
           alert(`File ${fileNumber} uploaded successfully!`);
