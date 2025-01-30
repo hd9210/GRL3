@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Use the VITE_API_BASE_URL from environment variables
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL,  // Ensure it's the correct base URL
+  baseURL: import.meta.env.VITE_API_BASE_URL+ "/api",  // Ensure it's the correct base URL
 });
 
 // Add Authorization header automatically
