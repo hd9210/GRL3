@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./AdminDashboardPage.css";
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const AdminDashboardPage = () => {
   const [files1, setFiles1] = useState([]);
   const [files2, setFiles2] = useState([]);
