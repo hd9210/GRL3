@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { jwtDecode } from "jwt-decode"; // Use the default import like this if Vite handles it correctly
 import "./HomePage.css"; // Import the CSS file
-
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 const HomePage = () => {
   // State to hold the email, password, and error messages
   const [email, setEmail] = useState("");
@@ -20,13 +20,13 @@ const HomePage = () => {
   
     try {
       // Send login request to the backend
-      const response = await fetch("http://localhost:5000/api/user/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(loginData),
-      });
+      const response = await fetch(`${API_BASE_URL}/api/user/login`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(loginData),
+});
       
       const data = await response.json();
       
